@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Text To Speak</h1>
+    <textarea id="txt" col="30" row="5" ></textarea><br>
+    <button id="btn">Click Me</button>
+</body>
+<script>
+    let text=document.getElementById("txt");
+    let btn=document.getElementById("btn");
+
+    btn.addEventListener("click",function(){
+        let text=txt.value;
+        let utterance=new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(utterance);
+    })
+</script>
+</html>
